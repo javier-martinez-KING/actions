@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>PyScript Hello World</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+  </head>
+
+  <body>
+    Hello world! <br>
+    This is the current date and time:
+    <py-script src="./release.py"> </py-script>
+    <button id="new-task-btn" class="p-2 text-white bg-blue-600 border border-blue-600 rounded" type="submit" pys-onClick="do_release">
+        Do Release
+      </button>
+    <py-script>
+from datetime import datetime
+now = datetime.now()
+now.strftime("%m/%d/%Y, %H:%M:%S")
+    </py-script>
+  </body>
+</html>

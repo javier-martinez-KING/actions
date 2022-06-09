@@ -100,10 +100,12 @@ print(r.json())
 #interface.register_new_package('mayafiction', 'maya')
 
 
-from js import Blob, document
-from js import window
+
   
 def do_release(*ags, **kws):
+    from js import Blob, document
+    from js import window
+  
     with open('/test.txt', 'rt') as fh:
         txt = fh.read()
         

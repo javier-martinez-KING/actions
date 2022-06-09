@@ -93,3 +93,28 @@ with ZipFile(zip_file_bytes_io, 'w') as zip_file:
     pprint(zip_file.infolist())  # Print final contents of in memory zip file.
 
 print('done')
+
+
+
+
+from zipfile import ZipFile
+from io import BytesIO
+ 
+in_memory = BytesIO()
+zf = ZipFile(in_memory, mode="w")
+ 
+#If you have data in text format that you want to save into the zip as a file
+zf.writestr("name", file_data)
+ 
+#Close the zip file
+zf.close()
+ 
+#Go to beginning
+in_memory.seek(0)
+ 
+#read the data
+data = in_memory.read()
+ 
+#You can save it to disk
+with open('file_name.zip','wb') as out:
+      out.write(data)
